@@ -1,1 +1,21 @@
+SQLite
+------
+SQLite 的一个重要的特性是零配置的，这意味着不需要复杂的安装或管理。
+在 Windows 上安装 SQLite.访问 SQLite 下载页面，从 Windows 区下载预编译的二进制文件。
+先下载好 sqlite-tools-win32-*.zip 和 sqlite-dll-win32-*.zip 压缩文件。
+创建文件夹 C:\sqlite，并在此文件夹下解压上面两个压缩文件，将得到 sqlite3.def、sqlite3.dll 和 sqlite3.exe 文件。
+添加 C:\sqlite 到 PATH 环境变量，最后在命令提示符下，最后使用 sqlite3 命令。
+
+MySql
+------
+首先上官网下载57版本mysql-5.7.24-winx64.zip
+MySQL安装文件分两种 .msi和.zip ，.msi需要安装，zip格式是自己解压
+解压缩之后其实MySQL就可以使用了，但是要进行环境变量配置zip格式是自己解压
+打开Path,在其后面添加: mysql bin文件夹的路径 ：C:\mysql\mysql-5.7.24-winx64\mysql-5.7.24-winx64\bin;
+配置完环境变量之后，在F:\mysql\mysql-5.7.24-winx64\mysql-5.7.24-winx64目录下新增加一个配置文件mysql.ini 
+同时在bin的同级目录下创建一个data文件夹（用于存放数据库数据）
+输入命令mysqld install，回车，会提示安装成功
+服务启动成功之后，需要登录的时候输入命令mysql –u root –p，修改密码（必须先启动mysql）
+执行命令mysqladmin –u root –p password回车，enter password也回车，关闭mysql开机自启动
+运行中输入Services.msc，mysql右键属性，自动改成手动，Navicat图形化界面连接mysql。
 
