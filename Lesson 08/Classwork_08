@@ -1,0 +1,55 @@
+# 练习存储过程、函数与触发器的定义与调用
+
+* 存储过程
+CREATE OR REPLACE PROCEDURE INSERT_TEAM
+(V_ID in NUMBER,V_CITY in VARCHER2 DEFAULT ‘AUSTIN’, V_NAME in VARCHER2)
+IS
+BEGIN
+INSERT INTO TEAM (id, city,name)
+VALUES (v_id,v_city,v_name);
+COMMIT;
+END;
+
+EXECUTE INSERT_TEAM (3,”AUSTIN”,”LONG HORNS”)
+
+
+* 函数
+delimiter //
+CREATE FUNCTION p_fun(p_i INT,p_l INT,p_k INT) 
+RETURNS INT
+BEGIN
+IF p_i + p_l >= p_k THEN
+RETURN p_k; 
+ELSE
+RETURN p_i; 
+END IF; 
+END //
+delimiter ;
+
+SET @p_i=3; 
+SET @p_l=7; 
+SET @p-k=15;
+SELECT p_fun(@p_i,@p_l,@p_k);
+
+
+* 触发器
+CREATE TRIGGER tri_student_after
+ON student AFTER insert
+AS
+BEGIN
+DECLARE @sClassId int
+DECLARE @SName nvarchar(50)
+DECLARE @sAge int
+SELECT @sClassId=sClassId,@SName=sName,@sAge=sAge FROM student
+PRINT @sClassId;
+pPRINT @SName;
+PRINT @sAge;
+
+
+
+END;
+
+
+# 存储过程、函数与触发器在真实业务系统中适用于具体哪些场景
+
+在公司的管理系统中，带有输入参数的存储过程可用于通过传入一名员工的ID来查询员工信息；函数可用于计算员工的业绩；而当向员工表插入一条记录时，希望mysql自动同时往日志表插入数据时可以使用触发器来完成。
