@@ -1,7 +1,8 @@
 # 题目一
 
 * 完成Apache/Nginx + MySQL + PHP基础开发环境的准备工作
-* 
+
+![image](https://github.com/Willhelmina/The-Principals-of-Database/blob/master/Lesson%2009/XAMPP.PNG)
 
 # 题目二
 
