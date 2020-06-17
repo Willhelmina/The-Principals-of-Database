@@ -7,6 +7,9 @@
 # 题目二
 
 * 完成PHP调试工具的安装、配置和使用
+
+![image](https://github.com/Willhelmina/The-Principals-of-Database/blob/master/Lesson%2009/XDebug.PNG)
+
 * 复习并练习使用编程语言访问数据库，并将运行结果在网页中展现出来
 
 # 题目三
